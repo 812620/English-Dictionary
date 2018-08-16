@@ -7,6 +7,8 @@ def dic(word):
     word = word.lower()
     if word in data:
         return data[word]
+    elif w.title() in data:
+        return data[w.title()]
     elif len(get_close_matches(word,data.keys()))> 0:
         yn= input("Did you mean %s instead? Enter Y for yes,or N for No: " % get_close_matches(word, data.keys())[0])
         if yn=="Y":
